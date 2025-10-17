@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 
-loaded_model = pickle.load(open('diabetes_model.sav', 'rb'))
+loaded_model = pickle.load(open('C:/Users/user/Desktop/diabete/diabetes_model.sav', 'rb'))
 
 def diabete_data_prediction(weight, stress_level, blood_glucose, user_id,
                             physical_activity, diet, medication_adherence,
@@ -63,4 +63,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
