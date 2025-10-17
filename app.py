@@ -57,3 +57,5 @@ if st.button("Predict Diabetes"):
     else:
         st.success("The patient is predicted to NOT have Diabetes ")
 
+if __name__ == "__main__":
+    main()
