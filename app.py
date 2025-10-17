@@ -10,7 +10,7 @@ import pandas as pd
 import streamlit as st
 
 # Load the trained model
-loaded_model = pickle.load(open('C:/Users/user/Desktop/diabete/diabetes_data.sav', 'rb'))
+loaded_model = pickle.load(open('diabetes_data.sav', 'rb'))
 
 # Prediction function
 def diabete_data_prediction(weight, stress_level, blood_glucose, bmi, risk_score):
@@ -56,3 +56,4 @@ if st.button("Predict Diabetes"):
         st.error("The patient is predicted to have Diabetes ")
     else:
         st.success("The patient is predicted to NOT have Diabetes ")
+
