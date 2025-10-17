@@ -1,10 +1,10 @@
-
+import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
 
 
-loaded_model = pickle.load(open('diabetes_model.sav', 'rb'))
+loaded_model = pickle.load(open('C:/Users/user/Desktop/diabete/diabetes_model.sav', 'rb'))
 
 def diabete_data_prediction(weight, stress_level, blood_glucose, user_id,
                             physical_activity, diet, medication_adherence,
@@ -29,9 +29,7 @@ def diabete_data_prediction(weight, stress_level, blood_glucose, user_id,
     
     return predicted_diabete[0]
 
-# -------------------------------
-# Main Streamlit app
-# -------------------------------
+
 def main():
     st.title("Diabetes Prediction App")
     st.write("Enter patient details to predict diabetes risk:")
@@ -53,8 +51,8 @@ def main():
     if st.button("Predict Diabetes"):
         # Call the prediction function
         prediction = diabete_data_prediction(weight, stress_level, blood_glucose, user_id,
-                                             physical_activity, diet, medication_adherence,
-                                             sleep_hours, hydration_level, bmi)
+                                    physical_activity, diet, medication_adherence,
+                                    sleep_hours, hydration_level, bmi)
         
         # Display result
         if prediction == 1 or prediction == 'Diabetes':
@@ -62,8 +60,6 @@ def main():
         else:
             st.success("The patient is predicted to NOT have Diabetes ✅")
 
-# -------------------------------
-# Run the app
-# -------------------------------
+
 if __name__ == "__main__":
     main()
